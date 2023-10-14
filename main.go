@@ -23,6 +23,5 @@ func main() {
 		fmt.Println("Error ", err)
 	}
 
-	fmt.Println(" --- YAML ---")
 	fmt.Println(string(confBytes.Bytes())) // yamlData will be in bytes. So converting it to string.
 }
