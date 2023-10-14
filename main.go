@@ -10,9 +10,7 @@ import (
 
 func main() {
 
-	rootNode := kong_entity.KongRootNode{
-		FormatVersion: "3.0",
-	}
+	rootNode := kong_entity.DefaultRootNode("3.0")
 
 	var confBytes bytes.Buffer
 
