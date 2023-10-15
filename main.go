@@ -4,13 +4,17 @@ import (
 	"bytes"
 	"fmt"
 	"kong-config-generator/kong_entity"
+	"kong-config-generator/plugins"
 
 	"gopkg.in/yaml.v3"
 )
 
 func main() {
 
-	rootNode := kong_entity.DefaultRootNode("3.0")
+	routes := []kong_entity.Route{*kong_entity.NewRoute()}
+	plugins := []kong_entity.Plugin{plugins.DefaultKeyAuthPlugin()}
+	service := kong_entity.NewService(kong_entity.WithRoutes(routes), kong_entity.WithServicePlugins(plugins))
+	rootNode := kong_entity.NewKongRootNode(kong_entity.WithServices([]kong_entity.Service{*service}))
 
 	var confBytes bytes.Buffer
 

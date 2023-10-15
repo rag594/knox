@@ -7,10 +7,39 @@ type KongRootNode struct {
 	Plugins       []Plugin  `yaml:"plugin,omitempty"`
 }
 
-func DefaultRootNode(version string) KongRootNode {
-	return KongRootNode{
-		FormatVersion: version,
-		Info:          Info{},
-		Services:      []Service{DefaultService()},
+func (k *KongRootNode) AddService(s Service) {
+	k.Services = append(k.Services, s)
+}
+
+func (r *KongRootNode) AddPlugin(p Plugin) {
+	r.Plugins = append(r.Plugins, p)
+}
+
+func WithServices(s []Service) func(*KongRootNode) {
+	return func(k *KongRootNode) {
+		for _, service := range s {
+			k.AddService(service)
+		}
 	}
+}
+
+func WithRootNodePlugins(p []Plugin) func(*KongRootNode) {
+	return func(k *KongRootNode) {
+		for _, plugin := range p {
+			k.AddPlugin(plugin)
+		}
+	}
+}
+
+func NewKongRootNode(options ...func(*KongRootNode)) *KongRootNode {
+	k := &KongRootNode{
+		FormatVersion: "3.0",
+		Info:          Info{},
+	}
+
+	for _, opt := range options {
+		opt(k)
+	}
+
+	return k
 }

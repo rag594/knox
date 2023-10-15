@@ -15,8 +15,32 @@ type Service struct {
 	Routes         []Route  `yaml:"routes,omitempty"`
 }
 
-func DefaultService() Service {
-	return Service{
+func (s *Service) AddPlugin(p Plugin) {
+	s.Plugins = append(s.Plugins, p)
+}
+
+func (s *Service) AddRoute(r Route) {
+	s.Routes = append(s.Routes, r)
+}
+
+func WithServicePlugins(p []Plugin) func(*Service) {
+	return func(s *Service) {
+		for _, plugin := range p {
+			s.AddPlugin(plugin)
+		}
+	}
+}
+
+func WithRoutes(r []Route) func(*Service) {
+	return func(s *Service) {
+		for _, route := range r {
+			s.AddRoute(route)
+		}
+	}
+}
+
+func NewService(options ...func(*Service)) *Service {
+	s := &Service{
 		Name:           "DefaultService",
 		Host:           "xyz.com",
 		Port:           80,
@@ -26,6 +50,11 @@ func DefaultService() Service {
 		ReadTimeout:    60000,
 		ConnectTimeout: 60000,
 		WriteTimeout:   60000,
-		Routes:         []Route{DefaultRoute()},
 	}
+
+	for _, opt := range options {
+		opt(s)
+	}
+
+	return s
 }

@@ -16,8 +16,20 @@ type Route struct {
 	Plugins                []Plugin `yaml:"plugin,omitempty"`
 }
 
-func DefaultRoute() Route {
-	return Route{
+func (r *Route) AddPlugin(p Plugin) {
+	r.Plugins = append(r.Plugins, p)
+}
+
+func WithRoutePlugins(p []Plugin) func(*Route) {
+	return func(r *Route) {
+		for _, plugin := range p {
+			r.AddPlugin(plugin)
+		}
+	}
+}
+
+func NewRoute(options ...func(*Route)) *Route {
+	r := &Route{
 		Name:                   "route1",
 		Protocols:              []string{"http", "https"},
 		Methods:                []string{"POST"},
@@ -31,4 +43,10 @@ func DefaultRoute() Route {
 		RequestBuffering:       true,
 		ResponseBuffering:      true,
 	}
+
+	for _, opt := range options {
+		opt(r)
+	}
+
+	return r
 }
