@@ -1,0 +1,5 @@
+.vscode
+.idea
+vendor/
+kong-config-generator
+dist/
