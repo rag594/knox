@@ -1,5 +1,11 @@
 package kong_entity
 
+import (
+	"bytes"
+
+	"gopkg.in/yaml.v3"
+)
+
 type KongRootNode struct {
 	FormatVersion string    `yaml:"_format_version"`
 	Info          Info      `yaml:"_info"`
@@ -42,4 +48,19 @@ func NewKongRootNode(options ...func(*KongRootNode)) *KongRootNode {
 	}
 
 	return k
+}
+
+func (k *KongRootNode) ToYaml() string {
+	var confBytes bytes.Buffer
+
+	yamlEncoder := yaml.NewEncoder(&confBytes)
+	yamlEncoder.SetIndent(2)
+
+	err := yamlEncoder.Encode(k)
+
+	if err != nil {
+		panic("error in encoding to yaml")
+	}
+
+	return string(confBytes.Bytes())
 }
