@@ -1,6 +1,6 @@
 # knox
 
-Tool to generate the spec template for kong with support of different plguins.
+Tool to generate the spec template for kong with support of different plguins. Different plugins at service/route level are needed to setup our service on kong.This can be used to generate a template and playaround with it.
 
 Now you can generate template with plugins at global, service and route level.You take the template and extend it for other routes/services.
 
