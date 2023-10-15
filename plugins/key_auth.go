@@ -1,6 +1,6 @@
 package plugins
 
-import "kong-config-generator/kong_entity"
+import "knox/kong_entity"
 
 type KeyAuthConfig struct {
 	KeyNames        []string `yaml:"key_names"`

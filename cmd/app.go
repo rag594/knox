@@ -2,8 +2,8 @@ package cmd
 
 import (
 	"fmt"
-	"kong-config-generator/kong_entity"
-	"kong-config-generator/plugins"
+	"knox/kong_entity"
+	"knox/plugins"
 	"strings"
 
 	"github.com/urfave/cli/v2"

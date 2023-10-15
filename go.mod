@@ -1,4 +1,4 @@
-module kong-config-generator
+module knox
 
 go 1.18
 

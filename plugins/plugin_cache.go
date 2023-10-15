@@ -1,6 +1,6 @@
 package plugins
 
-import "kong-config-generator/kong_entity"
+import "knox/kong_entity"
 
 var pluginCache = map[string]kong_entity.Plugin{
 	"key-auth": DefaultKeyAuthPlugin(),

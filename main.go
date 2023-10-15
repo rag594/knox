@@ -1,7 +1,7 @@
 package main
 
 import (
-	"kong-config-generator/cmd"
+	"knox/cmd"
 	"log"
 	"os"
 
