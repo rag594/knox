@@ -11,6 +11,12 @@ Now you can generate template with plugins at global, service and route level.Yo
 - [ ] request-transformer
 - [ ] request-transformer-advanced (enterprise)
 
+## Features
+
+- [x] Generate the template with plugins at service,route or global level
+- [ ] Summarise the kong-spec by loading the existing kong-spec
+- [ ] Add plugins/routes/services to the existing spec
+
 ## Install
 
 #### For Mac
