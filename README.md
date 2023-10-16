@@ -4,6 +4,10 @@ Tool to generate the spec template for kong with support of different plguins. D
 
 Now you can generate template with plugins at global, service and route level.You take the template and extend it for other routes/services.
 
+![render1697425879741-min](https://github.com/rag594/knox/assets/8286518/6e1f2a31-c0e8-4ca2-ae5d-d289498abba9)
+
+
+
 ## Supported Plugins(More plugins to come)
 
 - [x] key-auth 
