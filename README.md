@@ -18,8 +18,9 @@ Now you can generate template with plugins at global, service and route level.Yo
 ## Features
 
 - [x] Generate the template with plugins at service,route or global level
-- [ ] Summarise the kong-spec by loading the existing kong-spec
-- [ ] Add plugins/routes/services to the existing spec
+- [ ] Summarise the kong-spec by loading the existing kong-spec and visualise them (WIP)
+
+
 
 ## Install
 
