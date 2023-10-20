@@ -12,8 +12,11 @@ Now you can generate template with plugins at global, service and route level.Yo
 
 - [x] key-auth 
 - [x] cors 
-- [ ] request-transformer
-- [ ] request-transformer-advanced (enterprise)
+- [x] request-transformer-advanced
+- [x] rate-limiting-advanced
+- [x] exit-transformer
+- [x] pre-function
+- [x] acl
 
 ## Features
 
