@@ -53,6 +53,11 @@ knox visualise --spec <spec-file> --output <output-file>
 dot -Tsvg -O <dot-output>
 ```
 
+##### Sample SVG Generated
+
+<img width="1465" alt="Screenshot 2023-10-21 at 2 49 59 AM" src="https://github.com/rag594/knox/assets/8286518/708cc159-223c-471c-a23d-29395d9f16c4">
+
+
 
 ## Usage
 
