@@ -13,7 +13,7 @@ type Route struct {
 	PreserveHost           bool     `yaml:"preserve_host"`
 	RequestBuffering       bool     `yaml:"request_buffering"`
 	ResponseBuffering      bool     `yaml:"response_buffering"`
-	Plugins                []Plugin `yaml:"plugin,omitempty"`
+	Plugins                []Plugin `yaml:"plugins,omitempty"`
 }
 
 func (r *Route) AddPlugin(p Plugin) {

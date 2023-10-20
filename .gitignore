@@ -3,4 +3,7 @@
 vendor/
 kong-config-generator
 knox
+kong_test.yaml
+*.gv
+*.svg
 dist/

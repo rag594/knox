@@ -11,14 +11,14 @@ Now you can generate template with plugins at global, service and route level.Yo
 ## Supported Plugins(More plugins to come)
 
 - [x] key-auth 
-- [ ] cors 
+- [x] cors 
 - [ ] request-transformer
 - [ ] request-transformer-advanced (enterprise)
 
 ## Features
 
 - [x] Generate the template with plugins at service,route or global level
-- [ ] Summarise the kong-spec by loading the existing kong-spec and visualise them (WIP)
+- [x] Summarise the kong-spec by loading the existing kong-spec and visualise them
 
 
 
@@ -30,7 +30,30 @@ brew tap rag594/tap
 brew install knox
 ```
 
+## Visualise kong spec via graphviz
+
+#### Install Graphviz
+
+```
+brew install graphviz
+```
+
+#### Render the graph into DOT
+
+```
+knox visualise --spec <spec-file> --output <output-file>
+```
+
+##### Generate the SVG
+
+```
+dot -Tsvg -O <dot-output>
+```
+
+
 ## Usage
+
+#### Generate Spec for playground
 
 ```console
 foo@bar:~$ knox generate --help
@@ -45,6 +68,23 @@ OPTIONS:
    --route-plugins value    add route-plugins in comma-separated format. Example --route-plugins key-auth,cors
    --global-plugins value   add global-plugins in comma-separated format. Example --global-plugins key-auth,cors
    --help, -h               show help
+```
+
+#### Visualise your kong spec via graphviz
+
+```console
+foo@bar:~$ knox visualise --help
+NAME:
+   CLI for generating/visualising kong-spec visualise - generate the graphviz
+
+USAGE:
+   CLI for generating/visualising kong-spec visualise [command options] [arguments...]
+
+OPTIONS:
+   visualise
+
+   --output value  provide your output file using --output <file-path>
+   --spec value    load the file using --spec <file-path>
 ```
 
 ## Sample

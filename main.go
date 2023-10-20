@@ -10,9 +10,11 @@ import (
 
 func main() {
 
-	cliCommands := []*cli.Command{cmd.NewKongSpecTemplateCommand().Command}
+	cliCommands := []*cli.Command{
+		cmd.NewKongSpecTemplateCommand().Command,
+		cmd.NewKongSpecVisualiseCommand().Command}
 	app := &cli.App{
-		Name:     "CLI for generating kong-spec template",
+		Name:     "CLI for generating/visualising kong-spec",
 		Commands: cliCommands,
 	}
 

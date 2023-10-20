@@ -10,7 +10,7 @@ type KongRootNode struct {
 	FormatVersion string    `yaml:"_format_version"`
 	Info          Info      `yaml:"_info"`
 	Services      []Service `yaml:"services"`
-	Plugins       []Plugin  `yaml:"plugin,omitempty"`
+	Plugins       []Plugin  `yaml:"plugins,omitempty"`
 }
 
 func (k *KongRootNode) AddService(s Service) {
