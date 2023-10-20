@@ -81,14 +81,16 @@ func (g *KongSpecGraph) CreateGraph(root kong_entity.KongRootNode) {
 			g.Graph.AddVertex(route.Name)
 			g.Graph.AddEdge(service.Name, route.Name)
 			for _, rPlugin := range route.Plugins {
-				g.Graph.AddVertex(rPlugin.Name)
-				g.Graph.AddEdge(route.Name, rPlugin.Name)
+				routePluginNode := fmt.Sprintf("%s-%s", route.Name, rPlugin.Name)
+				g.Graph.AddVertex(routePluginNode)
+				g.Graph.AddEdge(route.Name, routePluginNode)
 			}
 		}
 
 		for _, sPlugin := range service.Plugins {
-			g.Graph.AddVertex(sPlugin.Name)
-			g.Graph.AddEdge(service.Name, sPlugin.Name)
+			servicePluginNode := fmt.Sprintf("%s-%s", service.Name, sPlugin.Name)
+			g.Graph.AddVertex(servicePluginNode)
+			g.Graph.AddEdge(service.Name, servicePluginNode)
 		}
 	}
 }
