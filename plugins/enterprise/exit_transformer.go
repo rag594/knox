@@ -4,7 +4,7 @@ import "knox/kong_entity"
 
 type ExitTransformerConfig struct {
 	Functions        []string `yaml:"functions"`
-	HandleUnknown    bool     `yaml:"handle_unkown"`
+	HandleUnknown    bool     `yaml:"handle_unknown"`
 	HandleUnexpected bool     `yaml:"handle_unexpected"`
 }
 

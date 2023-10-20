@@ -11,7 +11,7 @@ type Service struct {
 	ReadTimeout    int      `yaml:"read_timeout"`
 	ConnectTimeout int      `yaml:"connect_timeout"`
 	WriteTimeout   int      `yaml:"write_timeout"`
-	Plugins        []Plugin `yaml:"plugin,omitempty"`
+	Plugins        []Plugin `yaml:"plugins,omitempty"`
 	Routes         []Route  `yaml:"routes,omitempty"`
 }
 
