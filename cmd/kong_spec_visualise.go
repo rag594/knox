@@ -57,7 +57,7 @@ func NewKongSpecVisualiseCommand() *KongSpecVisualiseCommand {
 				fmt.Println("Err ", err)
 			}
 
-			g := graph.New(graph.StringHash)
+			g := graph.New(graph.StringHash, graph.Directed(), graph.Acyclic())
 
 			specGraph := &KongSpecGraph{Graph: g}
 
@@ -75,21 +75,37 @@ func NewKongSpecVisualiseCommand() *KongSpecVisualiseCommand {
 
 func (g *KongSpecGraph) CreateGraph(root kong_entity.KongRootNode) {
 	for _, service := range root.Services {
-		g.Graph.AddVertex(service.Name)
+		g.Graph.AddVertex(service.Name,
+			graph.VertexAttribute("colorscheme", "blues3"),
+			graph.VertexAttribute("style", "filled"),
+			graph.VertexAttribute("color", "2"),
+			graph.VertexAttribute("fillcolor", "1"))
 
 		for _, route := range service.Routes {
-			g.Graph.AddVertex(route.Name)
+			g.Graph.AddVertex(route.Name,
+				graph.VertexAttribute("colorscheme", "greens3"),
+				graph.VertexAttribute("style", "filled"),
+				graph.VertexAttribute("color", "2"),
+				graph.VertexAttribute("fillcolor", "1"))
 			g.Graph.AddEdge(service.Name, route.Name)
 			for _, rPlugin := range route.Plugins {
 				routePluginNode := fmt.Sprintf("%s-%s", route.Name, rPlugin.Name)
-				g.Graph.AddVertex(routePluginNode)
+				g.Graph.AddVertex(routePluginNode,
+					graph.VertexAttribute("colorscheme", "purples3"),
+					graph.VertexAttribute("style", "filled"),
+					graph.VertexAttribute("color", "2"),
+					graph.VertexAttribute("fillcolor", "1"))
 				g.Graph.AddEdge(route.Name, routePluginNode)
 			}
 		}
 
 		for _, sPlugin := range service.Plugins {
 			servicePluginNode := fmt.Sprintf("%s-%s", service.Name, sPlugin.Name)
-			g.Graph.AddVertex(servicePluginNode)
+			g.Graph.AddVertex(servicePluginNode,
+				graph.VertexAttribute("colorscheme", "reds3"),
+				graph.VertexAttribute("style", "filled"),
+				graph.VertexAttribute("color", "2"),
+				graph.VertexAttribute("fillcolor", "1"))
 			g.Graph.AddEdge(service.Name, servicePluginNode)
 		}
 	}
