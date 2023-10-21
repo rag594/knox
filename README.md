@@ -22,7 +22,7 @@ Now you can generate template with plugins at global, service and route level.Yo
 
 - [x] Generate the template with plugins at service,route or global level
 - [x] Summarise the kong-spec by loading the existing kong-spec and visualise them
-- [ ] Kong Spec from JSON to YAML and vice-versa
+- [x] Kong Spec from JSON to YAML and vice-versa
 
 
 
@@ -32,6 +32,12 @@ Now you can generate template with plugins at global, service and route level.Yo
 ```
 brew tap rag594/tap
 brew install knox
+```
+
+## Convert Kong spec from YAML to JSON and vice-versa
+
+```
+knox convert --to-format <yaml or json> --input <input-file>
 ```
 
 ## Visualise kong spec via graphviz
@@ -95,6 +101,24 @@ OPTIONS:
    --output value  provide your output file using --output <file-path>
    --spec value    load the file using --spec <file-path>
 ```
+
+#### Convert Spec from YAML to JSON and vice-versa
+
+```console
+foo@bar:~$ knox convert --help
+NAME:
+   CLI for generating/visualising kong-spec and convert - convert to JSON or YAML
+
+USAGE:
+   CLI for generating/visualising kong-spec convert [command options] [arguments...]
+
+OPTIONS:
+   converter
+
+   --input value      provide your input file using --input <file-path>
+   --to-format value  provide the format using --to-format <yaml or json>
+```
+
 
 ## Sample
 
