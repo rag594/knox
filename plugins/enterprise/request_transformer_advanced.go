@@ -3,51 +3,51 @@ package enterprise
 import "knox/kong_entity"
 
 type RequestTransformerAdvancedConfig struct {
-	HTTPMethod string    `yaml:"http_method"`
-	RemoveOp   RemoveOp  `yaml:"remove"`
-	RenameOp   RenameOp  `yaml:"rename"`
-	ReplaceOp  ReplaceOp `yaml:"replace"`
-	AddOp      AddOp     `yaml:"add"`
-	AppendOp   AppendOp  `yaml:"append"`
-	DotInKeys  bool      `yaml:"dot_in_keys"`
+	HTTPMethod string    `json:"http_method" yaml:"http_method"`
+	RemoveOp   RemoveOp  `json:"remove" yaml:"remove"`
+	RenameOp   RenameOp  `json:"rename" yaml:"rename"`
+	ReplaceOp  ReplaceOp `json:"replace" yaml:"replace"`
+	AddOp      AddOp     `json:"add" yaml:"add"`
+	AppendOp   AppendOp  `json:"append" yaml:"append"`
+	DotInKeys  bool      `json:"dot_in_keys" yaml:"dot_in_keys"`
 }
 
 type RemoveOp struct {
-	Body        []string `yaml:"body"`
-	Headers     []string `yaml:"headers"`
-	QueryString []string `yaml:"querystring"`
+	Body        []string `json:"body" yaml:"body"`
+	Headers     []string `json:"headers" yaml:"headers"`
+	QueryString []string `json:"querystring" yaml:"querystring"`
 }
 
 type RenameOp struct {
-	Body        []string `yaml:"body"`
-	Headers     []string `yaml:"headers"`
-	QueryString []string `yaml:"querystring"`
+	Body        []string `json:"body" yaml:"body"`
+	Headers     []string `json:"headers" yaml:"headers"`
+	QueryString []string `json:"querystring" yaml:"querystring"`
 }
 
 type ReplaceOp struct {
-	Body        []string `yaml:"body"`
-	Headers     []string `yaml:"headers"`
-	QueryString []string `yaml:"querystring"`
-	JsonTypes   []string `yaml:"json_types"`
-	URI         string   `yaml:"uri"`
+	Body        []string `json:"body" yaml:"body"`
+	Headers     []string `json:"headers" yaml:"headers"`
+	QueryString []string `json:"querystring" yaml:"querystring"`
+	JsonTypes   []string `json:"json_types" yaml:"json_types"`
+	URI         string   `json:"uri" yaml:"uri"`
 }
 
 type AddOp struct {
-	Body        []string `yaml:"body"`
-	Headers     []string `yaml:"headers"`
-	QueryString []string `yaml:"querystring"`
-	JsonTypes   []string `yaml:"json_types"`
+	Body        []string `json:"body" yaml:"body"`
+	Headers     []string `json:"headers" yaml:"headers"`
+	QueryString []string `json:"querystring" yaml:"querystring"`
+	JsonTypes   []string `json:"json_types" yaml:"json_types"`
 }
 
 type AppendOp struct {
-	Body        []string `yaml:"body"`
-	Headers     []string `yaml:"headers"`
-	QueryString []string `yaml:"querystring"`
-	JsonTypes   []string `yaml:"json_types"`
+	Body        []string `json:"body" yaml:"body"`
+	Headers     []string `json:"headers" yaml:"headers"`
+	QueryString []string `json:"querystring" yaml:"querystring"`
+	JsonTypes   []string `json:"json_types" yaml:"json_types"`
 }
 
 type AllowOp struct {
-	Body []string `yaml:"body"`
+	Body []string `json:"body" yaml:"body"`
 }
 
 func defaultRequestTransformerAdvanced() RequestTransformerAdvancedConfig {

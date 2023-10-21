@@ -3,13 +3,13 @@ package plugins
 import "knox/kong_entity"
 
 type KeyAuthConfig struct {
-	KeyNames        []string `yaml:"key_names"`
-	HideCredentials bool     `yaml:"hide_credentials"`
-	Anonymous       string   `yaml:"anonymous,omitempty"`
-	KeyInHeader     bool     `yaml:"key_in_header"`
-	KeyInQuery      bool     `yaml:"key_in_query"`
-	KeyInBody       bool     `yaml:"key_in_body"`
-	RunOnPreFlight  bool     `yaml:"run_on_preflight"`
+	KeyNames        []string `json:"key_names" yaml:"key_names"`
+	HideCredentials bool     `json:"hide_credentials" yaml:"hide_credentials"`
+	Anonymous       string   `json:"anonymous,omitempty" yaml:"anonymous,omitempty"`
+	KeyInHeader     bool     `json:"key_in_header" yaml:"key_in_header"`
+	KeyInQuery      bool     `json:"key_in_query" yaml:"key_in_query"`
+	KeyInBody       bool     `json:"key_in_body" yaml:"key_in_body"`
+	RunOnPreFlight  bool     `json:"run_on_preflight" yaml:"run_on_preflight"`
 }
 
 func defaultKeyAuthConfig() KeyAuthConfig {

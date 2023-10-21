@@ -3,16 +3,16 @@ package plugins
 import "knox/kong_entity"
 
 type PreFunctionConfig struct {
-	Certificate     []string `yaml:"certificate"`
-	Rewrite         []string `yaml:"rewrite"`
-	Access          []string `yaml:"access"`
-	HeaderFilter    []string `yaml:"header_filter"`
-	BodyFilter      []string `yaml:"body_filter"`
-	Log             []string `yaml:"log"`
-	WSHandShake     []string `yaml:"ws_handshake"`
-	WSClientFrame   []string `yaml:"ws_client_frame"`
-	WSUpstreamFrame []string `yaml:"ws_upstream_frame"`
-	WSClose         []string `yaml:"ws_close"`
+	Certificate     []string `json:"certificate" yaml:"certificate"`
+	Rewrite         []string `json:"rewrite" yaml:"rewrite"`
+	Access          []string `json:"access" yaml:"access"`
+	HeaderFilter    []string `json:"header_filter" yaml:"header_filter"`
+	BodyFilter      []string `json:"body_filter" yaml:"body_filter"`
+	Log             []string `json:"log" yaml:"log"`
+	WSHandShake     []string `json:"ws_handshake" yaml:"ws_handshake"`
+	WSClientFrame   []string `json:"ws_client_frame" yaml:"ws_client_frame"`
+	WSUpstreamFrame []string `json:"ws_upstream_frame" yaml:"ws_upstream_frame"`
+	WSClose         []string `json:"ws_close" yaml:"ws_close"`
 }
 
 func defaultPreFunctionConfig() PreFunctionConfig {

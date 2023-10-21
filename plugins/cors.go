@@ -3,13 +3,13 @@ package plugins
 import "knox/kong_entity"
 
 type CORSConfig struct {
-	Origins           []string `yaml:"origins"`
-	Headers           []string `yaml:"headers"`
-	ExposeHeaders     []string `yaml:"expose_headers"`
-	Methods           []string `yaml:"methods"`
-	MaxAge            int      `yaml:"max_age"`
-	Credential        bool     `yaml:"credentials"`
-	PreFlightContinue bool     `yaml:"preflight_continue"`
+	Origins           []string `json:"origins" yaml:"origins"`
+	Headers           []string `json:"headers" yaml:"headers"`
+	ExposeHeaders     []string `json:"expose_headers" yaml:"expose_headers"`
+	Methods           []string `json:"methods" yaml:"methods"`
+	MaxAge            int      `json:"max_age" yaml:"max_age"`
+	Credential        bool     `json:"credentials" yaml:"credentials"`
+	PreFlightContinue bool     `json:"preflight_continue" yaml:"preflight_continue"`
 }
 
 func defaultCORSConfig() CORSConfig {

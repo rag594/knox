@@ -11,7 +11,7 @@ builds:
       - windows
       - darwin
 archives:
-  - id: nimbus
+  - id: knox
     name_template: >-
       {{- .ProjectName }}_
       {{- title .Os }}_

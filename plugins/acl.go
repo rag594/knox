@@ -3,9 +3,9 @@ package plugins
 import "knox/kong_entity"
 
 type ACLConfig struct {
-	Allow            []string `yaml:"allow"`
-	Deny             []string `yaml:"deny"`
-	HideGroupHeaders bool     `yaml:"hide_group_headers"`
+	Allow            []string `json:"allow" yaml:"allow"`
+	Deny             []string `json:"deny" yaml:"deny"`
+	HideGroupHeaders bool     `json:"hide_group_headers" yaml:"hide_group_headers"`
 }
 
 func defaultACLConfig() ACLConfig {
