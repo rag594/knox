@@ -12,7 +12,8 @@ func main() {
 
 	cliCommands := []*cli.Command{
 		cmd.NewKongSpecTemplateCommand().Command,
-		cmd.NewKongSpecVisualiseCommand().Command}
+		cmd.NewKongSpecVisualiseCommand().Command,
+		cmd.NewKongSpecConverterCommand().Command}
 	app := &cli.App{
 		Name:     "CLI for generating/visualising kong-spec",
 		Commands: cliCommands,

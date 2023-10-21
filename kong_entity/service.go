@@ -1,18 +1,18 @@
 package kong_entity
 
 type Service struct {
-	Name           string   `yaml:"name"`
-	Host           string   `yaml:"host"`
-	Port           int      `yaml:"port"`
-	Protocol       string   `yaml:"protocol"`
-	Path           string   `yaml:"path"`
-	Retries        int      `yaml:"retries"`
-	Enabled        bool     `yaml:"enabled"`
-	ReadTimeout    int      `yaml:"read_timeout"`
-	ConnectTimeout int      `yaml:"connect_timeout"`
-	WriteTimeout   int      `yaml:"write_timeout"`
-	Plugins        []Plugin `yaml:"plugins,omitempty"`
-	Routes         []Route  `yaml:"routes,omitempty"`
+	Name           string   `json:"name" yaml:"name"`
+	Host           string   `json:"host" yaml:"host"`
+	Port           int      `json:"port" yaml:"port"`
+	Protocol       string   `json:"protocol" yaml:"protocol"`
+	Path           string   `json:"path" yaml:"path"`
+	Retries        int      `json:"retries" yaml:"retries"`
+	Enabled        bool     `json:"enabled" yaml:"enabled"`
+	ReadTimeout    int      `json:"read_timeout" yaml:"read_timeout"`
+	ConnectTimeout int      `json:"connect_timeout" yaml:"connect_timeout"`
+	WriteTimeout   int      `json:"write_timeout" yaml:"write_timeout"`
+	Plugins        []Plugin `json:"plugins,omitempty" yaml:"plugins,omitempty"`
+	Routes         []Route  `json:"routes,omitempty" yaml:"routes,omitempty"`
 }
 
 func (s *Service) AddPlugin(p Plugin) {

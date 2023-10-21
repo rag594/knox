@@ -1,8 +1,8 @@
 package kong_entity
 
 type Info struct {
-	Defaults   Default  `yaml:"defaults"`
-	SelectTags []string `yaml:"select_tags"`
+	Defaults   Default  `json:"defaults" yaml:"defaults"`
+	SelectTags []string `json:"select_tags" yaml:"select_tags"`
 }
 
 type Default struct {

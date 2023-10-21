@@ -1,19 +1,19 @@
 package kong_entity
 
 type Route struct {
-	Name                   string   `yaml:"name"`
-	Protocols              []string `yaml:"protocols"`
-	Methods                []string `yaml:"methods"`
-	Hosts                  []string `yaml:"hosts"`
-	Paths                  []string `yaml:"paths"`
-	HTTPRedirectStatusCode int      `yaml:"https_redirect_status_code"`
-	RegexPriority          int      `yaml:"regex_priority"`
-	StripPath              bool     `yaml:"strip_path"`
-	PathHandling           string   `yaml:"path_handling"`
-	PreserveHost           bool     `yaml:"preserve_host"`
-	RequestBuffering       bool     `yaml:"request_buffering"`
-	ResponseBuffering      bool     `yaml:"response_buffering"`
-	Plugins                []Plugin `yaml:"plugins,omitempty"`
+	Name                   string   `json:"name" yaml:"name"`
+	Protocols              []string `json:"protocols" yaml:"protocols"`
+	Methods                []string `json:"methods" yaml:"methods"`
+	Hosts                  []string `json:"hosts" yaml:"hosts"`
+	Paths                  []string `json:"paths" yaml:"paths"`
+	HTTPRedirectStatusCode int      `json:"https_redirect_status_code" yaml:"https_redirect_status_code"`
+	RegexPriority          int      `json:"regex_priority" yaml:"regex_priority"`
+	StripPath              bool     `json:"strip_path" yaml:"strip_path"`
+	PathHandling           string   `json:"path_handling" yaml:"path_handling"`
+	PreserveHost           bool     `json:"preserve_host" yaml:"preserve_host"`
+	RequestBuffering       bool     `json:"request_buffering" yaml:"request_buffering"`
+	ResponseBuffering      bool     `json:"response_buffering" yaml:"response_buffering"`
+	Plugins                []Plugin `json:"plugins,omitempty" yaml:"plugins,omitempty"`
 }
 
 func (r *Route) AddPlugin(p Plugin) {

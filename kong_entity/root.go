@@ -7,10 +7,10 @@ import (
 )
 
 type KongRootNode struct {
-	FormatVersion string    `yaml:"_format_version"`
-	Info          Info      `yaml:"_info"`
-	Services      []Service `yaml:"services"`
-	Plugins       []Plugin  `yaml:"plugins,omitempty"`
+	FormatVersion string    `json:"_format_version" yaml:"_format_version"`
+	Info          Info      `json:"_info" yaml:"_info"`
+	Services      []Service `json:"services" yaml:"services"`
+	Plugins       []Plugin  `json:"plugins,omitempty" yaml:"plugins,omitempty"`
 }
 
 func (k *KongRootNode) AddService(s Service) {
