@@ -22,6 +22,7 @@ Now you can generate template with plugins at global, service and route level.Yo
 
 - [x] Generate the template with plugins at service,route or global level
 - [x] Summarise the kong-spec by loading the existing kong-spec and visualise them
+- [ ] Kong Spec from JSON to YAML and vice-versa
 
 
 
